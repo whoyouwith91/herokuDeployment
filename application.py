@@ -1,6 +1,5 @@
 #importing libraries
 import os
-import sklearn
 import numpy as np
 import pandas as pd
 import flask
@@ -26,7 +25,6 @@ def ValuePredictor(to_predict_df):
 
 @application.route('/result',methods = ['POST'])
 def result():
-    if request.method == 'POST':
         request_dict = request.form.to_dict()
         request_list=list(request_dict.values())
         to_predict_list = request_list
