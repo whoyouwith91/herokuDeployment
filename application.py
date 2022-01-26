@@ -36,6 +36,6 @@ def result():
         to_predict_df = pd.DataFrame([to_predict_list], columns = ['carat','clarity','color','culet','cut','depth','fluorescence','lxwRatio','polish','symmetry','table'])
         result = ValuePredictor(to_predict_df)
         prediction= np.exp(result)
-        return (render_template("Result.html",prediction=prediction))
+        return render_template("Result.html",prediction=prediction)
 if __name__ == "__main__":
 	application.run(debug=True)
