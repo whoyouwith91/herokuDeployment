@@ -23,8 +23,9 @@ def ValuePredictor(to_predict_df):
     return result[0]
 
 
-@application.route('/result',methods = ['POST'])
+@application.route('/result',methods = ['GET','POST'])
 def result():
+    if request.method == 'POST':
         request_dict = request.form.to_dict()
         request_list=list(request_dict.values())
         to_predict_list = request_list
